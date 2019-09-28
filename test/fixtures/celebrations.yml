@@ -1,0 +1,29 @@
+# == Schema Information
+#
+# Table name: celebrations
+#
+#  id          :integer          not null, primary key
+#  image       :string
+#  name        :string
+#  description :text
+#  date        :date
+#  ubication   :string
+#  created_at  :datetime         not null
+#  updated_at  :datetime         not null
+#
+
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  image: MyString
+  name: MyString
+  description: MyText
+  date: 2019-09-28
+  ubication: MyString
+
+two:
+  image: MyString
+  name: MyString
+  description: MyText
+  date: 2019-09-28
+  ubication: MyString
