@@ -1,29 +1,57 @@
-<h2>Sign up</h2>
+<head>
+<!-- Font Icon -->
+<link rel="stylesheet" href="/styles/material-design-iconic-font.min.css">
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
+<!-- Main css -->
+<link rel="stylesheet" href="/styles/style.css">
+<title>Login in</title>
+</head>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+<body>
+
+  <div class="main">
+    <section class="signup">
+        <div class="container">
+
+            <div class="signup-content">
+                <div class="signup-form">
+                    <h2 class="form-title">Registro: </h2>
+
+                    <form class="register-form" id="register-form">
+
+                    <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+                        <div class="form-group">
+                          <%= f.label :email %><i class="zmdi zmdi-email"></i><br />
+                          <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+                        </div>
+
+                        <div class="form-group">
+                            <%= f.label :password %><i class="zmdi zmdi-lock"></i><br />
+                            <% if @minimum_password_length %>
+                            <em>(<%= @minimum_password_length %> characters minimum)</em>
+                            <%= f.password_field :password, autocomplete: "current-password" %>
+                            <% end %><br />
+                            <%= f.password_field :password, autocomplete: "new-password" %>
+                        </div>
+
+                        <div class="form-group">
+                        <%= f.label :password_confirmation %><i class="zmdi zmdi-lock"></i><br />
+                        <%= f.password_field :password_confirmation, autocomplete: "Repeat your password" %>
+                        </div>
+
+                        <div class="form-group">
+                            <input type="checkbox" name="agree-term" id="agree-term" class="agree-term" />
+                            <label for="agree-term" class="label-agree-term"><span><span></span></span>I agree all statements in  <a href="#" class="term-service">Terms of service</a></label>
+                        </div>
+                    </form>
+                    <% end %>
+                  </div>
+                    <div class="signup-image">
+                      <figure><img src="/images/sigup.jpg" alt="sing up image"></figure>
+                    <a href="#" class="signup-image-link">I am already member</a>
+                </div>
+            </div>
+        </div>
+    </section>
   </div>
-
-  <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "Sign up" %>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+</body>
