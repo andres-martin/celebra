@@ -29,7 +29,7 @@ class CelebrationsController < ApplicationController
   end
 
   def update
-    if @celebration.update(celebration_params)
+    @celebration.update(celebration_params)
   end
 
   private
@@ -42,9 +42,3 @@ class CelebrationsController < ApplicationController
     params.require(:celebration).permit(:image, :name, :description, :date, :ubication)  
   end
 end
-
-#  image       :string
-#  name        :string
-#  description :text
-#  date        :date
-#  ubication
